@@ -1,6 +1,5 @@
 import streamlit as st
 import json
-from pathlib import Path
 
 # Page configuration
 st.set_page_config(
@@ -17,15 +16,174 @@ with open("data/highlights.json", "r") as f:
 fm = data["fort_meade"]
 dc = data["dc_july4"]
 
-# Header
+# ----------------------------------------------------------------------------
+# Custom styling — dark, patriotic, festive
+# ----------------------------------------------------------------------------
 st.markdown("""
-    <div style='text-align: center; padding: 20px 0;'>
-        <h1>🎆 July 4th Independence Week Trip Planner</h1>
-        <p style='font-size: 18px; color: #7d8a9c;'>Fort Meade & Washington, DC Events</p>
-    </div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Base */
+html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+.stApp {
+    background:
+        radial-gradient(1200px 500px at 50% -200px, rgba(230,57,70,0.12), transparent 70%),
+        radial-gradient(1000px 500px at 100% 0%, rgba(77,121,255,0.12), transparent 70%),
+        #081226;
+}
+h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; letter-spacing: 0.5px; }
+
+/* Hero banner */
+.hero {
+    position: relative;
+    border-radius: 18px;
+    padding: 38px 30px 34px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+}
+.hero-dc {
+    background:
+        radial-gradient(420px 260px at 18% -40px, rgba(255,209,102,0.30), transparent 60%),
+        radial-gradient(460px 300px at 82% -60px, rgba(77,121,255,0.32), transparent 60%),
+        linear-gradient(135deg, #16224f 0%, #321024 100%);
+}
+.hero-fm {
+    background:
+        radial-gradient(420px 260px at 80% -50px, rgba(255,209,102,0.22), transparent 60%),
+        linear-gradient(135deg, #112a52 0%, #0c1a3a 60%, #2a1020 100%);
+}
+.hero-eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: #FFD166;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 1.02;
+    margin: 0 0 8px 0;
+    color: #FFFFFF;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.45);
+}
+.hero-sub { font-size: 16px; color: #C9D6F5; margin: 0; max-width: 640px; }
+.hero-fireworks { position: absolute; top: 0; right: 0; height: 100%; opacity: 0.9; pointer-events: none; }
+
+/* Cost / info card */
+.cardbox {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+/* Metric cards */
+[data-testid="stMetric"] {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 14px 16px;
+}
+[data-testid="stMetricLabel"] p { color: #9FB0D0 !important; font-size: 13px !important; }
+[data-testid="stMetricValue"] { font-family: 'Oswald', sans-serif; color: #FFFFFF; }
+
+/* Download button — bold and patriotic */
+.stDownloadButton button {
+    background: linear-gradient(135deg, #E63946 0%, #B02233 100%) !important;
+    color: #FFFFFF !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    padding: 14px 18px !important;
+    box-shadow: 0 6px 22px rgba(230,57,70,0.40) !important;
+}
+.stDownloadButton button:hover { filter: brightness(1.08); }
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] { gap: 8px; }
+.stTabs [data-baseweb="tab"] {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px 12px 0 0;
+    padding: 10px 18px;
+    font-weight: 600;
+}
+.stTabs [aria-selected="true"] {
+    background: rgba(230,57,70,0.18);
+    border-color: rgba(230,57,70,0.5);
+}
+
+/* Expanders */
+.streamlit-expanderHeader, [data-testid="stExpander"] details summary { font-weight: 500; }
+[data-testid="stExpander"] {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.02);
+}
+</style>
 """, unsafe_allow_html=True)
 
-st.divider()
+
+def fireworks_svg():
+    """Decorative fireworks burst for the DC hero (red/white/blue/gold)."""
+    rays = ""
+    import math
+    cx, cy = 70, 70
+    colors = ["#FFD166", "#E63946", "#4D79FF", "#FFFFFF"]
+    for i in range(16):
+        ang = math.radians(i * 22.5)
+        x2 = cx + 56 * math.cos(ang)
+        y2 = cy + 56 * math.sin(ang)
+        c = colors[i % len(colors)]
+        rays += f'<line x1="{cx}" y1="{cy}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{c}" stroke-width="2.4" stroke-linecap="round"/>'
+        rays += f'<circle cx="{x2:.1f}" cy="{y2:.1f}" r="2.6" fill="{c}"/>'
+    return f'<svg class="hero-fireworks" viewBox="0 0 160 160" width="200" height="200">{rays}<circle cx="{cx}" cy="{cy}" r="4" fill="#FFFFFF"/></svg>'
+
+
+def stars_svg():
+    """Decorative star field for the Fort Meade hero."""
+    import random
+    random.seed(76)
+    star = ('M10 0 L12.4 6.9 L19.5 7.0 L13.8 11.3 L16 18.2 '
+            'L10 14 L4 18.2 L6.2 11.3 L0.5 7.0 L7.6 6.9 Z')
+    out = '<svg class="hero-fireworks" viewBox="0 0 220 160" width="240" height="170">'
+    for _ in range(11):
+        x = random.randint(10, 200)
+        y = random.randint(8, 130)
+        s = random.uniform(0.5, 1.2)
+        op = random.uniform(0.45, 1.0)
+        out += f'<g transform="translate({x},{y}) scale({s:.2f})" opacity="{op:.2f}"><path d="{star}" fill="#FFD166"/></g>'
+    out += '</svg>'
+    return out
+
+
+def hero(css_class, eyebrow, title, subtitle, decoration):
+    st.markdown(f"""
+    <div class="hero {css_class}">
+        {decoration}
+        <div class="hero-eyebrow">{eyebrow}</div>
+        <div class="hero-title">{title}</div>
+        <p class="hero-sub">{subtitle}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# Global header
+st.markdown("""
+<div style='text-align:center; padding: 6px 0 14px;'>
+    <div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:30px; color:#FFFFFF;">
+        🎆 Independence Week 2026 Trip Planner
+    </div>
+    <div style="color:#9FB0D0; font-size:15px;">Fort Meade · July 2 &nbsp;|&nbsp; Washington, DC · July 4</div>
+</div>
+""", unsafe_allow_html=True)
 
 # Two tabs
 tab1, tab2 = st.tabs(["🚩 Fort Meade (July 2)", "🏛️ Washington, DC (July 4)"])
@@ -34,6 +192,15 @@ tab1, tab2 = st.tabs(["🚩 Fort Meade (July 2)", "🏛️ Washington, DC (July 
 # FORT MEADE TAB
 # ============================================================================
 with tab1:
+    hero(
+        "hero-fm",
+        "Thursday · July 2, 2026 · Fort Meade Parade Field",
+        "Fort Meade Fireworks",
+        "America's 250th Birthday — Red, White &amp; Blue Celebration. Free admission, "
+        "fireworks at 9:30 PM. The easy, low-cost local option.",
+        stars_svg(),
+    )
+
     # PDF Download — at the top for quick access
     with open("assets/fort-meade.pdf", "rb") as pdf_file:
         st.download_button(
@@ -127,6 +294,15 @@ with tab1:
 # DC TAB
 # ============================================================================
 with tab2:
+    hero(
+        "hero-dc",
+        "Saturday · July 4, 2026 · National Mall",
+        "Washington, DC",
+        "Salute to America &amp; Freedom 250 — the largest fireworks show in National Mall "
+        "history (~11 PM). Tickets required. Plan transportation carefully.",
+        fireworks_svg(),
+    )
+
     # PDF Download — at the top for quick access
     with open("assets/dc-july4.pdf", "rb") as pdf_file:
         st.download_button(
