@@ -28,12 +28,6 @@
       "Bug spray",
       "Reusable water bottles"
     ],
-    "what_to_leave": [
-      "Pets",
-      "Grills",
-      "Sparklers",
-      "Glass containers"
-    ],
     "cost_breakdown": {
       "admission": "$0",
       "parking": "$0",
@@ -108,37 +102,59 @@
         "get_there": "Yes",
         "get_home": "No",
         "reason": "Last train around 10:00 PM"
+      },
+      {
+        "method": "Drive + Park near Mall",
+        "get_there": "Yes (gridlock)",
+        "get_home": "Difficult",
+        "reason": "Street closures June 24–July 11; garages jammed for hours"
       }
     ],
     "recommended_plan": "Drive to Greenbelt Metro, free ride home after 5 PM",
     "cost_breakdown": [
       {
         "plan": "Drive + Metro (Recommended)",
-        "parking": "$0",
-        "transit_fare": "$12-24",
-        "gas": "$5-8",
-        "food_drinks": "$120-200",
+        "parking": "$0 (free weekend Metro garage)",
+        "transit_fare": "$12–$24 (free after 5 PM)",
+        "gas": "$5–$8 total",
+        "return": "Included (free Metro)",
+        "food_drinks": "$120–$200 total",
         "total": "$160–$240"
       },
       {
-        "plan": "MARC Plan",
-        "parking": "Limited",
-        "transit_fare": "$28",
-        "return": "Rideshare $80-150+",
+        "plan": "MARC Plan (in only)",
+        "parking": "Odenton lot — limited, arrive early",
+        "transit_fare": "$28 round trip for 4",
+        "gas": "$3–$5 to station",
+        "return": "Rideshare $80–$150+ (July 4 surge)",
+        "food_drinks": "$120–$200 total",
         "total": "$230–$330+"
+      },
+      {
+        "plan": "Amtrak Plan (in only)",
+        "parking": "BWI lot (~$9/day)",
+        "transit_fare": "$28–$76 round trip for 4",
+        "gas": "$5–$7 to station",
+        "return": "Rideshare $80–$150+ (July 4 surge)",
+        "food_drinks": "$120–$200 total",
+        "total": "$230–$350+"
       }
     ],
     "itinerary": [
       {"time": "8:30 AM", "activity": "Leave Fort Meade, drive to Greenbelt Metro"},
-      {"time": "10:00 AM", "activity": "Arrive National Mall"},
-      {"time": "10:00-12:30 PM", "activity": "Parade & State Fair"},
-      {"time": "1:00-2:00 PM", "activity": "Pass through security"},
-      {"time": "2:00-6:00 PM", "activity": "Museums or shaded areas (heat break)"},
-      {"time": "~11:00 PM", "activity": "Fireworks display"},
-      {"time": "12:30-1:30 AM", "activity": "Return to Greenbelt, drive home"}
+      {"time": "9:15 AM", "activity": "Board Metro Green Line toward L'Enfant Plaza / Smithsonian"},
+      {"time": "10:00 AM", "activity": "Arrive National Mall. Great American State Fair opens (free)"},
+      {"time": "10:00–12:30 PM", "activity": "Morning program: Salute to America Parade + state-fair pavilions"},
+      {"time": "12:30–1:00 PM", "activity": "Early lunch before security lines build"},
+      {"time": "1:00–2:00 PM", "activity": "Pass through security (clear bag, ID, no chairs/coolers/aerosols)"},
+      {"time": "2:00–6:00 PM", "activity": "Hottest part of day — air-conditioned Smithsonian museums (free heat break)"},
+      {"time": "7:00 PM", "activity": "Evening broadcast program begins"},
+      {"time": "~11:00 PM", "activity": "Fireworks display (850,000 shells from 10 sites)"},
+      {"time": "11:45 PM–12:30 AM", "activity": "Exit with crowd toward Metro station (30–60 min to clear)"},
+      {"time": "12:30–1:30 AM", "activity": "Free Metro ride back to Greenbelt, drive home"}
     ],
     "key_alerts": [
-      "Heat: 100°F with heat index 105-110°F",
+      "Heat: 100°F with heat index 105–110°F",
       "Fireworks start ~11:00 PM (later than usual)",
       "Registration required (max 4 per phone number)",
       "Metro only viable return option after midnight"

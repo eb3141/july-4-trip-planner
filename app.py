@@ -34,6 +34,20 @@ tab1, tab2 = st.tabs(["🚩 Fort Meade (July 2)", "🏛️ Washington, DC (July 
 # FORT MEADE TAB
 # ============================================================================
 with tab1:
+    # PDF Download — at the top for quick access
+    with open("assets/fort-meade.pdf", "rb") as pdf_file:
+        st.download_button(
+            label="📥 Download Full Fort Meade PDF",
+            data=pdf_file.read(),
+            file_name="FortMeade_July2_2026_Fireworks.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            type="primary",
+            key="download_fm_top"
+        )
+
+    st.markdown("---")
+
     # Event Summary
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -109,22 +123,24 @@ with tab1:
         st.write("---")
         st.write(f"**{fm['cost_breakdown']['total']}**")
 
-    st.markdown("---")
-
-    # PDF Download
-    with open("assets/fort-meade.pdf", "rb") as pdf_file:
-        st.download_button(
-            label="📥 Download Full Fort Meade PDF",
-            data=pdf_file.read(),
-            file_name="FortMeade_July2_2026_Fireworks.pdf",
-            mime="application/pdf",
-            use_container_width=True
-        )
-
 # ============================================================================
 # DC TAB
 # ============================================================================
 with tab2:
+    # PDF Download — at the top for quick access
+    with open("assets/dc-july4.pdf", "rb") as pdf_file:
+        st.download_button(
+            label="📥 Download Full DC July 4 PDF",
+            data=pdf_file.read(),
+            file_name="DC_July4_2026_Itinerary.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            type="primary",
+            key="download_dc_top"
+        )
+
+    st.markdown("---")
+
     # Key Action - Registration
     st.error(
         "🚨 **ACTION REQUIRED:** Register for free fireworks tickets at "
@@ -228,7 +244,7 @@ with tab2:
     cost_scenarios = dc["cost_breakdown"]
 
     for scenario in cost_scenarios:
-        with st.expander(f"📊 {scenario['plan']}"):
+        with st.expander(f"📊 {scenario.get('plan', 'Plan')}"):
             col1, col2 = st.columns(2)
             with col1:
                 st.write("**Expense**")
@@ -241,13 +257,13 @@ with tab2:
                 st.write("**TOTAL**")
             with col2:
                 st.write("**Amount**")
-                st.write(scenario["parking"])
-                st.write(scenario["transit_fare"])
-                st.write(scenario["gas"])
-                st.write(scenario["return"])
-                st.write(scenario["food_drinks"])
+                st.write(scenario.get("parking", "—"))
+                st.write(scenario.get("transit_fare", "—"))
+                st.write(scenario.get("gas", "—"))
+                st.write(scenario.get("return", "—"))
+                st.write(scenario.get("food_drinks", "—"))
                 st.write("---")
-                st.write(f"**{scenario['total']}**")
+                st.write(f"**{scenario.get('total', '—')}**")
 
     st.markdown("---")
 
@@ -269,18 +285,6 @@ with tab2:
         st.markdown("### Event Info")
         st.markdown("[📍 Official Event Info](https://250.dc.gov)")
         st.markdown("[🅿️ ParkWhiz Parking](https://parkwhiz.com)")
-
-    st.markdown("---")
-
-    # PDF Download
-    with open("assets/dc-july4.pdf", "rb") as pdf_file:
-        st.download_button(
-            label="📥 Download Full DC July 4 PDF",
-            data=pdf_file.read(),
-            file_name="DC_July4_2026_Itinerary.pdf",
-            mime="application/pdf",
-            use_container_width=True
-        )
 
 # Footer
 st.markdown("---")
