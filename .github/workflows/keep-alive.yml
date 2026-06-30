@@ -11,4 +11,9 @@ jobs:
     steps:
       - name: Ping Streamlit app
         run: |
-          curl -sSf -o /dev/null -w "HTTP %{http_code}\n" "https://july-4-trip-planner-n7rhe3bsyzkeacjbmrytwf.streamlit.app/"
+          # Follow Streamlit's auth-cookie handshake (-L with a cookie jar) so the
+          # request actually loads the app and returns HTTP 200, instead of stopping
+          # at the initial 303 redirect. -f makes a real 4xx/5xx fail the step.
+          curl -sSfL -c /tmp/cookies.txt -b /tmp/cookies.txt --max-redirs 10 -o /dev/null \
+            -w "HTTP %{http_code}\n" \
+            "https://july-4-trip-planner-n7rhe3bsyzkeacjbmrytwf.streamlit.app/"
