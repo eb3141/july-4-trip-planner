@@ -1,0 +1,147 @@
+{
+  "fort_meade": {
+    "date": "Thursday, July 2, 2026",
+    "time": "4:00 PM – 10:00 PM",
+    "fireworks_time": "9:30 PM",
+    "location": "Fort Meade Parade Field",
+    "admission": "Free, open to the public",
+    "activities": [
+      "DJ",
+      "Food & beverage vendors",
+      "Novelty vendors",
+      "Free kids' bounce house (4–8 PM, ages 2–14)"
+    ],
+    "not_allowed": [
+      "Pets",
+      "Grills",
+      "Sparklers",
+      "Glass containers"
+    ],
+    "id_requirements": {
+      "dod_cardholders": "Enter through Mapes/32, Mapes/175, or Rockenbach/175 gates",
+      "non_military": "Enter through Reece/175 gate with REAL ID-compliant driver's license, ID card, or U.S. passport. All passengers 18+ need valid ID."
+    },
+    "what_to_bring": [
+      "REAL ID-compliant license, ID, or passport for every adult",
+      "Cash or card for vendors",
+      "Blankets or low lawn chairs",
+      "Bug spray",
+      "Reusable water bottles"
+    ],
+    "what_to_leave": [
+      "Pets",
+      "Grills",
+      "Sparklers",
+      "Glass containers"
+    ],
+    "cost_breakdown": {
+      "admission": "$0",
+      "parking": "$0",
+      "gas": "$3–$5",
+      "food_drinks": "$40–$80/person",
+      "total": "$45–$85 for the group"
+    },
+    "itinerary": [
+      {
+        "time": "3:30 PM",
+        "activity": "Leave home, head to the correct gate for your ID type"
+      },
+      {
+        "time": "4:00 PM",
+        "activity": "Event opens. Bounce house, food trucks/vendors, and DJ are live"
+      },
+      {
+        "time": "4:00–6:00 PM",
+        "activity": "Dinner from vendors, walk the field, claim a viewing spot"
+      },
+      {
+        "time": "6:00–8:00 PM",
+        "activity": "Hottest stretch of the evening — find shade, hydrate, take breaks"
+      },
+      {
+        "time": "8:00–9:15 PM",
+        "activity": "Settle into your fireworks spot; bring a blanket or low chairs"
+      },
+      {
+        "time": "9:30 PM",
+        "activity": "Fireworks display"
+      },
+      {
+        "time": "10:00–10:30 PM",
+        "activity": "Event wraps up. Depart via the appropriate gate"
+      }
+    ],
+    "key_alert": "Early July evenings have been running hot and humid, with highs near 100°F. Plan for shade breaks, sunscreen, and extra water."
+  },
+  "dc_july4": {
+    "date": "Saturday, July 4, 2026",
+    "time": "Event: 10:00 AM – Midnight",
+    "fireworks_time": "~11:00 PM (up to 45 minutes)",
+    "location": "National Mall, Washington, DC",
+    "fireworks_details": "850,000 shells from 10 launch sites",
+    "admission": "Free (but tickets REQUIRED)",
+    "registration_link": "events.freedom250.org",
+    "key_action": "REGISTER FOR FREE FIREWORKS TICKETS NOW",
+    "clear_bag_policy": "Only one small clear bag or small clutch per person",
+    "prohibited_items": [
+      "Chairs",
+      "Coolers",
+      "Aerosols",
+      "Glass containers"
+    ],
+    "id_requirement": "Government-issued photo ID required",
+    "transportation_options": [
+      {
+        "method": "Drive + Metrorail (RECOMMENDED)",
+        "get_there": "Yes",
+        "get_home": "Yes",
+        "reason": "Metrorail runs until 2 AM with free fares after 5 PM"
+      },
+      {
+        "method": "MARC (Penn Line)",
+        "get_there": "Yes",
+        "get_home": "No",
+        "reason": "Last train at 10:55 PM (before 11 PM fireworks)"
+      },
+      {
+        "method": "Amtrak",
+        "get_there": "Yes",
+        "get_home": "No",
+        "reason": "Last train around 10:00 PM"
+      }
+    ],
+    "recommended_plan": "Drive to Greenbelt Metro, free ride home after 5 PM",
+    "cost_breakdown": [
+      {
+        "plan": "Drive + Metro (Recommended)",
+        "parking": "$0",
+        "transit_fare": "$12-24",
+        "gas": "$5-8",
+        "food_drinks": "$120-200",
+        "total": "$160–$240"
+      },
+      {
+        "plan": "MARC Plan",
+        "parking": "Limited",
+        "transit_fare": "$28",
+        "return": "Rideshare $80-150+",
+        "total": "$230–$330+"
+      }
+    ],
+    "itinerary": [
+      {"time": "8:30 AM", "activity": "Leave Fort Meade, drive to Greenbelt Metro"},
+      {"time": "10:00 AM", "activity": "Arrive National Mall"},
+      {"time": "10:00-12:30 PM", "activity": "Parade & State Fair"},
+      {"time": "1:00-2:00 PM", "activity": "Pass through security"},
+      {"time": "2:00-6:00 PM", "activity": "Museums or shaded areas (heat break)"},
+      {"time": "~11:00 PM", "activity": "Fireworks display"},
+      {"time": "12:30-1:30 AM", "activity": "Return to Greenbelt, drive home"}
+    ],
+    "key_alerts": [
+      "Heat: 100°F with heat index 105-110°F",
+      "Fireworks start ~11:00 PM (later than usual)",
+      "Registration required (max 4 per phone number)",
+      "Metro only viable return option after midnight"
+    ]
+  }
+}
