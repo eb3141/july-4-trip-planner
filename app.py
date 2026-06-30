@@ -224,7 +224,7 @@ with tab1:
     with col3:
         st.metric("🎆 Fireworks", "9:30 PM")
     with col4:
-        st.metric("💰 Cost", "$45-85")
+        st.metric("💰 Cost · Group of 4", "$45-85")
 
     st.markdown("---")
 
@@ -335,7 +335,7 @@ with tab2:
     with col3:
         st.metric("🎆 Fireworks", "~11:00 PM")
     with col4:
-        st.metric("💰 Cost (Rec.)", "$160-240")
+        st.metric("💰 Cost · Group of 4", "$160-240", help="Recommended Drive + Metro plan")
 
     st.markdown("---")
 
