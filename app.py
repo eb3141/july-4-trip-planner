@@ -298,13 +298,13 @@ with tab2:
         "hero-dc",
         "Saturday · July 4, 2026 · National Mall",
         "Washington, DC",
-        "Salute to America &amp; Freedom 250 — the largest fireworks show in National Mall "
-        "history (~11 PM). Tickets required. Plan transportation carefully.",
+        "Salute to America 250 · Gates open 5 PM · Fireworks 10:30 PM · "
+        "Military flyovers from 1:15 PM. Tickets required.",
         fireworks_svg(),
     )
 
     # PDF Download — at the top for quick access
-    with open("assets/dc-july4.pdf", "rb") as pdf_file:
+    with open("assets/dc-july4.pdf", "rb") as pdf_file:  # noqa: SIM115
         st.download_button(
             label="📥 Download Full DC July 4 PDF",
             data=pdf_file.read(),
@@ -324,6 +324,13 @@ with tab2:
         "You must verify the confirmation text or your reservation won't lock in."
     )
 
+    st.warning(
+        "⚠️ **SCHEDULE UPDATE (July 4, 2026):** Due to extreme heat (~107°F), the plan has changed:\n\n"
+        "• **Gates open at 5:00 PM** (not 1 PM) — magnetometers active from 5 PM. Do not line up before 4 PM.\n"
+        "• **Fireworks at ~10:30 PM** (~40 min) — Trump speaks at 9:45 PM.\n"
+        "• **Military flyovers** start at 1:15 PM, then every hour until sunset (visible without entering the secured perimeter)."
+    )
+
     st.markdown("---")
 
     # Event Summary
@@ -333,7 +340,7 @@ with tab2:
     with col2:
         st.metric("🕐 Time", "10:00 AM - Midnight")
     with col3:
-        st.metric("🎆 Fireworks", "~11:00 PM")
+        st.metric("🎆 Fireworks", "~10:30 PM")
     with col4:
         st.metric("💰 Cost · Group of 4", "$160-240", help="Recommended Drive + Metro plan")
 
@@ -373,16 +380,19 @@ with tab2:
             "✅ Free Metro rides after 5 PM (covers entire return trip)\n"
             "✅ Metro runs until 2 AM (only option for late fireworks)\n\n"
             "**Timeline:**\n"
-            "8:30 AM - Leave Fort Meade\n"
-            "10:00 AM - Arrive National Mall\n"
+            "11:00 AM - Leave Fort Meade (no reason to rush — gates open at 5 PM)\n"
+            "12:30 PM - Arrive National Mall (museums + watch flyovers, starts 1:15 PM)\n"
+            "4:00 PM - Head to security line (earliest Freedom 250 advises)\n"
+            "5:00 PM - Through gates\n"
+            "9:45 PM - Trump speaks · 10:30 PM - Fireworks\n"
             "12:30-1:30 AM - Drive home"
         )
 
         st.markdown("### ⛔ Why NOT Train?")
         st.error(
-            "MARC & Amtrak stop before 11 PM fireworks:\n"
-            "• MARC: Last train 10:55 PM\n"
-            "• Amtrak: Last train 10:00 PM\n\n"
+            "MARC & Amtrak depart before fireworks end:\n"
+            "• MARC: Last train 10:55 PM (fireworks end ~11:10 PM — you'd miss it)\n"
+            "• Amtrak: Last train ~10:00 PM\n\n"
             "You'd need costly rideshare ($80-150+) to get home."
         )
 
@@ -466,7 +476,7 @@ with tab2:
 st.markdown("---")
 st.markdown(
     "<div style='text-align: center; color: #7d8a9c; font-size: 12px;'>"
-    "Last Updated: June 30, 2026 | Check 250.dc.gov, mta.maryland.gov, wmata.com for final updates"
+    "Last Updated: July 4, 2026 | Check 250.dc.gov, mta.maryland.gov, wmata.com for live updates"
     "</div>",
     unsafe_allow_html=True
 )

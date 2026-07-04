@@ -70,7 +70,7 @@
   "dc_july4": {
     "date": "Saturday, July 4, 2026",
     "time": "Event: 10:00 AM – Midnight",
-    "fireworks_time": "~11:00 PM (up to 45 minutes)",
+    "fireworks_time": "~10:30 PM (~40 minutes)",
     "location": "National Mall, Washington, DC",
     "fireworks_details": "850,000 shells from 10 launch sites",
     "admission": "Free (but tickets REQUIRED)",
@@ -141,23 +141,28 @@
       }
     ],
     "itinerary": [
-      {"time": "8:30 AM", "activity": "Leave Fort Meade, drive to Greenbelt Metro"},
-      {"time": "9:15 AM", "activity": "Board Metro Green Line toward L'Enfant Plaza / Smithsonian"},
-      {"time": "10:00 AM", "activity": "Arrive National Mall. Great American State Fair opens (free)"},
-      {"time": "10:00–12:30 PM", "activity": "Morning program: Salute to America Parade + state-fair pavilions"},
-      {"time": "12:30–1:00 PM", "activity": "Early lunch before security lines build"},
-      {"time": "1:00–2:00 PM", "activity": "Pass through security (clear bag, ID, no chairs/coolers/aerosols)"},
-      {"time": "2:00–6:00 PM", "activity": "Hottest part of day — air-conditioned Smithsonian museums (free heat break)"},
-      {"time": "7:00 PM", "activity": "Evening broadcast program begins"},
-      {"time": "~11:00 PM", "activity": "Fireworks display (850,000 shells from 10 sites)"},
-      {"time": "11:45 PM–12:30 AM", "activity": "Exit with crowd toward Metro station (30–60 min to clear)"},
-      {"time": "12:30–1:30 AM", "activity": "Free Metro ride back to Greenbelt, drive home"}
+      {"time": "11:00 AM", "activity": "Leave Fort Meade, drive to Greenbelt Metro (gates don't open until 5 PM — no need for an early start)"},
+      {"time": "11:45 AM", "activity": "Board Metro Green Line toward L'Enfant Plaza / Smithsonian"},
+      {"time": "12:30 PM", "activity": "Arrive National Mall. Smithsonian museums open (free, fully air-conditioned)"},
+      {"time": "12:30–1:15 PM", "activity": "Early lunch near the Mall before the flyover crowd builds"},
+      {"time": "1:15 PM", "activity": "Military flyovers begin — visible from the National Mall area (no security ticket needed for this)"},
+      {"time": "1:15–4:00 PM", "activity": "Flyovers continue every hour until sunset. Stay cool inside Smithsonian museums between shows"},
+      {"time": "4:00 PM", "activity": "Begin heading to Freedom 250 security lines — Freedom 250 advises not to arrive before 4 PM"},
+      {"time": "5:00 PM", "activity": "Gates open. Pass through security magnetometers (clear bag, ID, no chairs/coolers/aerosols)"},
+      {"time": "5:00–9:30 PM", "activity": "On the Mall: claim your viewing spot, grab food from vendors, enjoy the pre-show atmosphere"},
+      {"time": "9:45 PM", "activity": "President Trump speaks"},
+      {"time": "10:30 PM", "activity": "Fireworks display begins (~40 minutes, 850,000 shells from 10 launch sites)"},
+      {"time": "~11:10 PM", "activity": "Fireworks end. Exit with crowd toward Metro station (allow 30–60 min to clear)"},
+      {"time": "11:45 PM–12:30 AM", "activity": "Free Metro ride back to Greenbelt (Metro runs until 2 AM, free from 5 PM)"},
+      {"time": "12:30–1:30 AM", "activity": "Drive home from Greenbelt Metro"}
     ],
     "key_alerts": [
-      "Heat: 100°F with heat index 105–110°F",
-      "Fireworks start ~11:00 PM (later than usual)",
-      "Registration required (max 4 per phone number)",
-      "Metro only viable return option after midnight"
+      "⚠️ SCHEDULE CHANGE: Gates open at 5:00 PM — do NOT line up before 4:00 PM",
+      "🔥 Heat: ~107°F forecast — use Smithsonian museums as your heat refuge until 4 PM",
+      "✈️ Military flyovers: 1:15 PM then every hour until sunset (visible from National Mall, no ticket needed)",
+      "🎤 Trump speaks 9:45 PM · Fireworks at 10:30 PM (~40 min)",
+      "🚇 Metro is the only viable return — free from 5 PM, runs until 2 AM",
+      "📋 Registration required (max 4 per phone number)"
     ]
   }
 }
